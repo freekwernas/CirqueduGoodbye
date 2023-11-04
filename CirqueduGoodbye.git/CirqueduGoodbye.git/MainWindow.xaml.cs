@@ -30,6 +30,12 @@ namespace CirqueduGoodbye.git
             Circus.CircusAnimals.Add(new Carnivore("Cheeta", 3));
             Circus.CircusAnimals.Add(new Herbivore("Giraffe", 5));
             Circus.CircusAnimals.Add(new Carnivore("Tiger", 5));
+            Circus.CircusAnimals.Add(new Carnivore("Piranha", 1));
+            Circus.CircusAnimals.Add(new Carnivore("Piranha", 1));
+            Circus.CircusAnimals.Add(new Herbivore("Chicken", 1));
+            Circus.CircusAnimals.Add(new Carnivore("Dog", 3));
+            Circus.CircusAnimals.Add(new Herbivore("Squirrel", 1));
+            Circus.CircusAnimals.Add(new Herbivore("Goat", 3));
             refreshAnimals();
         }
 
