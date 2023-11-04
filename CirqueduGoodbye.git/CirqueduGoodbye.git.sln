@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CirqueduGoodbye.git", "CirqueduGoodbye.git\CirqueduGoodbye.git.csproj", "{D056D427-8FC2-46C7-A4DB-28DD4A91627C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationCore", "ObjectClasses\ApplicationCore.csproj", "{8FE0CBB2-B54B-4339-9AA3-0243858212FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D056D427-8FC2-46C7-A4DB-28DD4A91627C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D056D427-8FC2-46C7-A4DB-28DD4A91627C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D056D427-8FC2-46C7-A4DB-28DD4A91627C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D056D427-8FC2-46C7-A4DB-28DD4A91627C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FE0CBB2-B54B-4339-9AA3-0243858212FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FE0CBB2-B54B-4339-9AA3-0243858212FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FE0CBB2-B54B-4339-9AA3-0243858212FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FE0CBB2-B54B-4339-9AA3-0243858212FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F4CA530-92EB-4BF4-8501-425989D74B12}
+	EndGlobalSection
+EndGlobal

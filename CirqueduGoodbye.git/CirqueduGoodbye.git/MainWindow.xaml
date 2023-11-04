@@ -1,0 +1,32 @@
+﻿<Window x:Class="CirqueduGoodbye.git.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CirqueduGoodbye.git"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="377" Width="900">
+    <Grid Margin="0,0,10,0">
+        <ListBox x:Name="tbAnimals" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="189,10,0,106" HorizontalAlignment="Left" Width="236"/>
+        <TextBox x:Name="tbAnimalName" HorizontalAlignment="Left" Margin="29,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="76,221,0,0" VerticalAlignment="Top" Click="btnAdd_Click"/>
+        <ComboBox x:Name="cbbAnimalType" HorizontalAlignment="Left" Margin="29,182,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
+            <ComboBoxItem Content="Carnivore"/>
+            <ComboBoxItem Content="Herbivore"/>
+        </ComboBox>
+        <Label x:Name="lblAnimalName" Content="Name" HorizontalAlignment="Left" Margin="29,37,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.31,0.237"/>
+        <Label x:Name="lblAnimalSize" Content="Size" HorizontalAlignment="Left" Margin="31,93,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblAnimalType" Content="Type" HorizontalAlignment="Left" Margin="29,151,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.658,-1.158"/>
+        <ComboBox x:Name="cbbSize" HorizontalAlignment="Left" Margin="29,124,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
+            <ComboBoxItem  Content="small" />
+            <ComboBoxItem Content="medium"/>
+            <ComboBoxItem Content="large"/>
+        </ComboBox>
+        <Button x:Name="btnDelete" Content="Delete
+" HorizontalAlignment="Left" Margin="281,240,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.827,0.319" Click="btnDelete_Click"/>
+        <Button x:Name="btnCalculateWagons" Content="Calculate
+" HorizontalAlignment="Left" Margin="636,298,0,16" RenderTransformOrigin="0.034,0.453" Click="btnCalculateWagons_Click"/>
+        <ListBox x:Name="lbWagons" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="437,0,0,74"/>
+    </Grid>
+
+</Window>

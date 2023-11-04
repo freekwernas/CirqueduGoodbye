@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ApplicationCore.Interfaces
+{
+    internal interface IAnimal
+    {
+        int Size { get; }
+        string Name { get; }
+    }
+}

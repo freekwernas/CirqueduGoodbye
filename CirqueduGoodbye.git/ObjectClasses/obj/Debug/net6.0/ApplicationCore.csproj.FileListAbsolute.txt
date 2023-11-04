@@ -1,0 +1,11 @@
+C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\ObjectClasses\obj\Debug\net6.0\ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\ObjectClasses\obj\Debug\net6.0\ApplicationCore.AssemblyInfoInputs.cache
+C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\ObjectClasses\obj\Debug\net6.0\ApplicationCore.AssemblyInfo.cs
+C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\ObjectClasses\obj\Debug\net6.0\ApplicationCore.csproj.CoreCompileInputs.cache
+C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\ObjectClasses\bin\Debug\net6.0\ApplicationCore.deps.json
+C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\ObjectClasses\bin\Debug\net6.0\ApplicationCore.dll
+C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\ObjectClasses\bin\Debug\net6.0\ApplicationCore.pdb
+C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\ObjectClasses\obj\Debug\net6.0\ApplicationCore.dll
+C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\ObjectClasses\obj\Debug\net6.0\refint\ApplicationCore.dll
+C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\ObjectClasses\obj\Debug\net6.0\ApplicationCore.pdb
+C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\ObjectClasses\obj\Debug\net6.0\ref\ApplicationCore.dll
