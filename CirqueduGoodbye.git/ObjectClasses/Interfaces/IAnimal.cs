@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Interfaces
 {
-    internal interface IAnimal
+    public interface IAnimal
     {
         int Size { get; }
         string Name { get; }

@@ -17,44 +17,37 @@ namespace ApplicationCore.ObjectClasses
 
         public void LoadWagons(List<Animal> animals)
         {
-            TrainWagon wagon = new TrainWagon(10);
-
             List<Animal> sortedAnimals = animals.OrderByDescending(x => x.Size).ToList();
 
+            foreach (Animal animal in sortedAnimals.OfType<Carnivore>())
+            {               
+                TrainWagon wagon = new TrainWagon(10);
+                wagon.Animals.Add(animal); //add animal
+                WagonList.Add(wagon); //add wagon to list before adding new wagon
+                
+            }
+
+            int wagonList = WagonList.Count;
             foreach (Animal animal in sortedAnimals.OfType<Herbivore>())
             {
-                if(wagon.Capacity < (wagon.Animals.Sum(animal => animal.Size) + animal.Size)) // if capacity is not breached
-                {
-                    WagonList.Add(wagon); //add wagon to list before adding new wagon
-                    wagon = new TrainWagon(10); //new wagon
-                    wagon.Animals.Add(animal); //add animal
-                }
-                else
-                {
-                    wagon.Animals.Add(animal); //no new wagon needed
-                }
-            }
-            WagonList.Add(wagon); // commit last wagon
-
-            int wagonListWithHerbivores = WagonList.Count;
-            foreach (Animal animal in sortedAnimals.OfType<Carnivore>())
-            {
                 bool animalAdded = false;
-                for (int i = 0; i < wagonListWithHerbivores; i++)
+                for (int i = 0; i < wagonList; i++)
                 {
-                
-                    //if capacity is not breached OR if a smaller animal is present
-                    if (WagonList[i].Capacity >= (WagonList[i].Animals.Sum(animal => animal.Size) + animal.Size) && !WagonList[i].Animals.Any(x => x.Size <= animal.Size) && !WagonList[i].Animals.OfType<Carnivore>().Any()) 
+
+                    //if capacity is not breached OR if a same size or bigger animal is present of type carnivore
+                    if (WagonList[i].Capacity >= (WagonList[i].Animals.Sum(animal => animal.Size) + animal.Size) && !WagonList[i].Animals.Any(x => x.Size >= animal.Size && x.GetType() == typeof(Carnivore)))
                     {
                         animalAdded = true;
                         WagonList[i].Animals.Add(animal);
+                        break;
                     }
                 }
                 if (!animalAdded) // in case the carnivore wasn't able to be added to a carriage.
                 {
-                    wagon = new TrainWagon(10);
+                    TrainWagon wagon = new TrainWagon(10);
                     wagon.Animals.Add(animal);
                     WagonList.Add(wagon);
+                    wagonList++;
                 }
             }
         }
