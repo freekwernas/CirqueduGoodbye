@@ -7,12 +7,15 @@ namespace ApplicationCore.ObjectClasses
     {
         public Animal(string name, int size)
         {
-            Size = size;
-            Name = name;
+            this.size = size;
+            this.name = name;
         }
+        
+        private string name;
+        private int size;
 
-
-        public string Name { get; private set; }
-        public int Size { get; private set; }
+        //Encapsulation
+        public string Name { get { return name; } set { name = value; } }
+        public int Size { get { return size; } set { size = value; } }
     }
 }

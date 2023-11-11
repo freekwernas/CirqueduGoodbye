@@ -1,4 +1,5 @@
-﻿using ApplicationCore.ObjectClasses;
+﻿using ApplicationCore.Interfaces;
+using ApplicationCore.ObjectClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,8 @@ namespace CirqueduGoodbye.git
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Circus Circus = new Circus();
+        //SOLID dependency Inversion principle
+        public ICircus Circus = new Circus();
         public MainWindow()
         {
             InitializeComponent();
@@ -83,8 +85,8 @@ namespace CirqueduGoodbye.git
             {
                 MessageBox.Show("Add name");
             }
-
-            Circus.AddAnimal(tbAnimalName.Text, Circus.EquateSize(cbbSize.Text), cbbAnimalType.Text);
+            //Since checked for null override nullable
+            Circus.AddAnimal(tbAnimalName.Text!, Circus.EquateSize(cbbSize.Text), cbbAnimalType.Text);
             refreshAnimals();
         }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ApplicationCore.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,18 +7,19 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.ObjectClasses
 {
-    public  class Train
+    public  class Train : ITrain
     {
-        public List<TrainWagon> WagonList { get; set; } = new List<TrainWagon> { };
+        //SOLID Dependency inversion
+        public List<ITrainWagon> WagonList { get; set; } = new List<ITrainWagon> { };
 
         public Train() 
         {
             
         }
 
-        public void LoadWagons(List<Animal> animals)
+        public void LoadWagons(List<IAnimal> animals)
         {
-            List<Animal> sortedAnimals = animals.OrderByDescending(x => x.Size).ToList();
+            List<IAnimal> sortedAnimals = animals.OrderByDescending(x => x.Size).ToList();
 
             foreach (Animal animal in sortedAnimals.OfType<Carnivore>())
             {               
@@ -28,14 +30,14 @@ namespace ApplicationCore.ObjectClasses
             }
 
             int wagonList = WagonList.Count;
-            foreach (Animal animal in sortedAnimals.OfType<Herbivore>())
+            foreach (Herbivore animal in sortedAnimals.OfType<Herbivore>())
             {
                 bool animalAdded = false;
                 for (int i = 0; i < wagonList; i++)
                 {
 
                     //if capacity is not breached OR if a same size or bigger animal is present of type carnivore
-                    if (WagonList[i].Capacity >= (WagonList[i].Animals.Sum(animal => animal.Size) + animal.Size) && !WagonList[i].Animals.Any(x => x.Size >= animal.Size && x.GetType() == typeof(Carnivore)))
+                    if (!WagonList[i].CapcityBreached(animal) && !animal.WillGetEatenAnyAnimal(WagonList[i].Animals))
                     {
                         animalAdded = true;
                         WagonList[i].Animals.Add(animal);

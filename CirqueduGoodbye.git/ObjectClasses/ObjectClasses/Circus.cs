@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.ObjectClasses
 {
-    public  class Circus
+    public  class Circus : ICircus
     {
-        public List<Animal> CircusAnimals { get; set; } 
+        public List<IAnimal> CircusAnimals { get; set; } 
 
         public Circus()
         {
-            CircusAnimals = new List<Animal>();
+            CircusAnimals = new List<IAnimal>();
         }
 
         public void AddAnimal(string name, int size, string type)
