@@ -13,10 +13,23 @@ namespace ApplicationCore.ObjectClasses
         private int capacity;
         public int Capacity { get { return capacity; } set { capacity = value; } }
         //SOLID Dependency inversion
-        public List<IAnimal> Animals { get; set; } = new List<IAnimal> { };
+        private readonly List<IAnimal> animals;
+        public IReadOnlyList<IAnimal> Animals => animals.AsReadOnly();
         public TrainWagon(int capacity)
         {
+            animals = new List<IAnimal>();
             this.capacity = capacity;
+        }
+
+        public bool TryAddAnimal(IAnimal animal)
+        {
+            if (!CapcityBreached(animal))
+            {
+                animals.Add(animal);
+                return true;
+            }
+
+            return false;
         }
 
         //SOLID single responsibility

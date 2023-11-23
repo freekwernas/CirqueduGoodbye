@@ -9,7 +9,8 @@ namespace ApplicationCore.Interfaces
 {
     public interface ITrain
     {
-        public List<ITrainWagon> WagonList { get; set; }
+        public IReadOnlyList<ITrainWagon> WagonList { get; }
         public void LoadWagons(List<IAnimal> animals);
+        public void AddWagon(ITrainWagon wagon);
     }
 }

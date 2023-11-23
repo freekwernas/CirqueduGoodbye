@@ -1,0 +1,12 @@
+C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.deps.json
+C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.dll
+C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.dll
+C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\DataAccessLayer\obj\Debug\net6.0\refint\DataAccessLayer.dll
+C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\DataAccessLayer\obj\Debug\net6.0\ref\DataAccessLayer.dll

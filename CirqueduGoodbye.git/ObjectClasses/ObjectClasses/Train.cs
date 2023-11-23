@@ -10,22 +10,28 @@ namespace ApplicationCore.ObjectClasses
     public  class Train : ITrain
     {
         //SOLID Dependency inversion
-        public List<ITrainWagon> WagonList { get; set; } = new List<ITrainWagon> { };
+        private readonly List<ITrainWagon> traingWagons;
+        public IReadOnlyList<ITrainWagon> WagonList => traingWagons.AsReadOnly();
 
         public Train() 
         {
-            
+            traingWagons = new List<ITrainWagon>();
+        }
+
+        public void AddWagon(ITrainWagon wagon) 
+        {
+            traingWagons.Add(wagon);
         }
 
         public void LoadWagons(List<IAnimal> animals)
         {
             List<IAnimal> sortedAnimals = animals.OrderByDescending(x => x.Size).ToList();
-
+            
             foreach (Animal animal in sortedAnimals.OfType<Carnivore>())
             {               
                 TrainWagon wagon = new TrainWagon(10);
-                wagon.Animals.Add(animal); //add animal
-                WagonList.Add(wagon); //add wagon to list before adding new wagon
+                wagon.TryAddAnimal(animal); //add animal
+                traingWagons.Add(wagon); //add wagon to list before adding new wagon
                 
             }
 
@@ -40,15 +46,15 @@ namespace ApplicationCore.ObjectClasses
                     if (!WagonList[i].CapcityBreached(animal) && !animal.WillGetEatenAnyAnimal(WagonList[i].Animals))
                     {
                         animalAdded = true;
-                        WagonList[i].Animals.Add(animal);
+                        WagonList[i].TryAddAnimal(animal);
                         break;
                     }
                 }
                 if (!animalAdded) // in case the carnivore wasn't able to be added to a carriage.
                 {
                     TrainWagon wagon = new TrainWagon(10);
-                    wagon.Animals.Add(animal);
-                    WagonList.Add(wagon);
+                    wagon.TryAddAnimal(animal);
+                    traingWagons.Add(wagon);
                     wagonList++;
                 }
             }

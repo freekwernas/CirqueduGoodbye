@@ -30,26 +30,30 @@ namespace UnitTests
             //Optimal solution
             Train train = new Train();
             TrainWagon wagon1 = new TrainWagon(10);
-            wagon1.Animals.AddRange(new List<Animal> { new Carnivore("Lion", 5) });
-            train.WagonList.Add(wagon1);
+            wagon1.TryAddAnimal( new Carnivore("Lion", 5) );
+            train.AddWagon(wagon1);
             TrainWagon wagon2 = new TrainWagon(10);
-            wagon2.Animals.AddRange(new List<Animal> { new Carnivore("Tiger", 5) });
-            train.WagonList.Add(wagon2);
+            wagon2.TryAddAnimal(new Carnivore("Tiger", 5) );
+            train.AddWagon(wagon2);
             TrainWagon wagon3 = new TrainWagon(10);
-            wagon3.Animals.AddRange(new List<Animal> { new Carnivore("Cheeta", 3), new Herbivore("Hippo", 5) });
-            train.WagonList.Add(wagon3);
+            wagon3.TryAddAnimal(new Carnivore("Cheeta", 3));
+            wagon3.TryAddAnimal(new Herbivore("Hippo", 5));
+            train.AddWagon(wagon3);
             TrainWagon wagon4 = new TrainWagon(10);
-            wagon4.Animals.AddRange(new List<Animal> { new Carnivore("Dog", 3), new Herbivore("Giraffe", 5) });
-            train.WagonList.Add(wagon4);
+            wagon4.TryAddAnimal(new Carnivore("Dog", 3));
+            wagon4.TryAddAnimal(new Herbivore("Giraffe", 5));
+            train.AddWagon(wagon4);
             TrainWagon wagon5 = new TrainWagon(10);
-            wagon5.Animals.AddRange(new List<Animal> { new Carnivore("Piranha", 1), new Herbivore("Goat", 3) });
-            train.WagonList.Add(wagon5);
+            wagon5.TryAddAnimal(new Carnivore("Piranha", 1));
+            wagon5.TryAddAnimal(new Herbivore("Goat", 3));
+            train.AddWagon(wagon5);
             TrainWagon wagon6 = new TrainWagon(10);
-            wagon6.Animals.AddRange(new List<Animal> { new Carnivore("Piranha", 1) });
-            train.WagonList.Add(wagon6);
+            wagon6.TryAddAnimal(new Carnivore("Piranha", 1) );
+            train.AddWagon(wagon6);
             TrainWagon wagon7 = new TrainWagon(10);
-            wagon7.Animals.AddRange(new List<Animal> { new Herbivore("Chicken", 1), new Herbivore("Squirrel", 1) });
-            train.WagonList.Add(wagon7);
+            wagon7.TryAddAnimal(new Herbivore("Chicken", 1));
+            wagon7.TryAddAnimal(new Herbivore("Squirrel", 1));
+            train.AddWagon(wagon7);
 
             //Serialize object into JSON format, because the CollectionAssert uses a reference in the object.Equals method from IEnumerable
             var expectedString = Newtonsoft.Json.JsonConvert.SerializeObject(train.WagonList);
@@ -136,11 +140,11 @@ namespace UnitTests
         {
             TrainWagon wagonOne = new TrainWagon(10);
             TrainWagon wagonTwo = new TrainWagon(10);
-            wagonOne.Animals.Add(new Herbivore("Sheep", 3));
-            wagonOne.Animals.Add(new Herbivore("Giraffe", 5));
+            wagonOne.TryAddAnimal(new Herbivore("Sheep", 3));
+            wagonOne.TryAddAnimal(new Herbivore("Giraffe", 5));
 
-            wagonTwo.Animals.Add(new Herbivore("Giraffe", 5));
-            wagonTwo.Animals.Add(new Herbivore("Hippo", 5));
+            wagonTwo.TryAddAnimal(new Herbivore("Giraffe", 5));
+            wagonTwo.TryAddAnimal(new Herbivore("Hippo", 5));
 
             Animal animal = new Carnivore("Piranha", 1);
 

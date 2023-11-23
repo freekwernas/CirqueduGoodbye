@@ -9,8 +9,10 @@ namespace ApplicationCore.Interfaces
     public interface ITrainWagon
     {
         public int Capacity { get; }
-
-        public List<IAnimal> Animals { get; set; }
         public bool CapcityBreached(IAnimal animal);
+
+        public IReadOnlyList<IAnimal> Animals { get; }
+
+        public bool TryAddAnimal(IAnimal animal);
     }
 }

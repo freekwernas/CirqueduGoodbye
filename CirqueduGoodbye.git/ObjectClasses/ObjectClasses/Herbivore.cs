@@ -15,7 +15,7 @@ namespace ApplicationCore.ObjectClasses
         }
 
         //SOLID single responsibility
-        public bool WillGetEatenAnyAnimal(List<IAnimal> animals)
+        public bool WillGetEatenAnyAnimal(IReadOnlyList<IAnimal> animals)
         {
             bool willGetEaten = false;
             if (animals.Any(x => x.GetType() == typeof(Carnivore)))
