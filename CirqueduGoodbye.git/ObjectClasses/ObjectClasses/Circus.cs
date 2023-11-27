@@ -9,25 +9,31 @@ namespace ApplicationCore.ObjectClasses
 {
     public  class Circus : ICircus
     {
-        public List<IAnimal> CircusAnimals { get; set; } 
+        public List<IAnimal> CircusAnimals { get; set; }
 
-        public Circus()
+        private int id;
+
+        //Encapsulation
+        public int Id { get { return id; } set { id = value; } }
+
+        public Circus(int id)
         {
             CircusAnimals = new List<IAnimal>();
+            Id = id;
         }
 
-        public void AddAnimal(string name, int size, string type)
-        {
-            if (type == "Carnivore")
-            {
+        //public void AddAnimal(string name, int size, string type, int id)
+        //{
+        //    if (type == "Carnivore")
+        //    {
 
-                CircusAnimals.Add(new Carnivore(name, size));
-            }
-            else //since no other options
-            {
-                CircusAnimals.Add(new Herbivore(name, size));
-            }
-        }
+        //        CircusAnimals.Add(new Carnivore(name, size, id));
+        //    }
+        //    else //since no other options
+        //    {
+        //        CircusAnimals.Add(new Herbivore(name, size, id));
+        //    }
+        //}
 
         public int EquateSize(string size)
         {

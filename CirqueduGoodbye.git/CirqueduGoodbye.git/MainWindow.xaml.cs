@@ -1,5 +1,9 @@
-﻿using ApplicationCore.Interfaces;
+﻿using ApplicationCore;
+using ApplicationCore.Interfaces;
 using ApplicationCore.ObjectClasses;
+using DataAccessLayer;
+using DataAccessLayer.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,38 +27,34 @@ namespace CirqueduGoodbye.git
     public partial class MainWindow : Window
     {
         //SOLID dependency Inversion principle
-        public ICircus Circus = new Circus();
-        public MainWindow()
+        public ICircus _circus;
+        public ICircusService _circusService;
+        public IAnimalService _animalService;
+        public MainWindow(IAnimalService animalService, ICircusService circusService)
         {
             InitializeComponent();
-            Circus.CircusAnimals.Add(new Carnivore("Lion", 5));
-            Circus.CircusAnimals.Add(new Herbivore("Hippo", 5));
-            Circus.CircusAnimals.Add(new Carnivore("Cheeta", 3));
-            Circus.CircusAnimals.Add(new Herbivore("Giraffe", 5));
-            Circus.CircusAnimals.Add(new Carnivore("Tiger", 5));
-            Circus.CircusAnimals.Add(new Carnivore("Piranha", 1));
-            Circus.CircusAnimals.Add(new Carnivore("Piranha", 1));
-            Circus.CircusAnimals.Add(new Herbivore("Chicken", 1));
-            Circus.CircusAnimals.Add(new Carnivore("Dog", 3));
-            Circus.CircusAnimals.Add(new Herbivore("Squirrel", 1));
-            Circus.CircusAnimals.Add(new Herbivore("Goat", 3));
+            _circusService = circusService;
+            _animalService = animalService;
             refreshAnimals();
         }
 
         private void refreshAnimals()
         {
+            _circus = _circusService.GetCircusById(1);
+            _circus.CircusAnimals.AddRange(_animalService.GetAnimals());
+
             tbAnimals.Items.Clear();
-            foreach (Animal animal in Circus.CircusAnimals)
+            foreach (ApplicationCore.ObjectClasses.Animal animal in _circus.CircusAnimals)
             {
                 tbAnimals.Items.Add(animal.Name.ToString());
             }
             tbAnimals.Items.Refresh();
         }
 
-        private void refreshWagons(Train train)
+        private void refreshWagons(ApplicationCore.ObjectClasses.Train train)
         {
             lbWagons.Items.Clear();
-            foreach (TrainWagon wagon in train.WagonList)
+            foreach (ApplicationCore.ObjectClasses.TrainWagon wagon in train.WagonList)
             {
                 lbWagons.Items.Add(wagon.ToString());
             }
@@ -63,7 +63,7 @@ namespace CirqueduGoodbye.git
 
         private void btnCalculateWagons_Click(object sender, RoutedEventArgs e)
         {
-            refreshWagons(Circus.CalculateTrain());
+            refreshWagons(_circus.CalculateTrain());
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
@@ -74,7 +74,7 @@ namespace CirqueduGoodbye.git
             }
             else
             {
-                Circus.CircusAnimals.RemoveAt(tbAnimals.SelectedIndex);
+                _animalService.DeleteAnimal(_circus.CircusAnimals[tbAnimals.SelectedIndex]);
                 refreshAnimals();
             }
         }        
@@ -86,7 +86,7 @@ namespace CirqueduGoodbye.git
                 MessageBox.Show("Add name");
             }
             //Since checked for null override nullable
-            Circus.AddAnimal(tbAnimalName.Text!, Circus.EquateSize(cbbSize.Text), cbbAnimalType.Text);
+            _animalService.AddAnimal(tbAnimalName.Text!, _circus.EquateSize(cbbSize.Text), cbbAnimalType.Text, _circus.Id);
             refreshAnimals();
         }
     }

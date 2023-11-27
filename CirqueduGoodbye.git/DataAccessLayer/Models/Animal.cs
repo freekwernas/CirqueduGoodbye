@@ -14,7 +14,7 @@ namespace DataAccessLayer.Models
         public int? TrainWagonId { get; set; }
         public int CircusId { get; set; }
 
-        public virtual Circus Circus { get; set; }
+        public virtual Circu Circus { get; set; }
         public virtual TrainWagon TrainWagon { get; set; }
     }
 }

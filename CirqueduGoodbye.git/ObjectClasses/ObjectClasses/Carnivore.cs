@@ -4,7 +4,7 @@ namespace ApplicationCore.ObjectClasses
 {
     public class Carnivore : Animal
     {
-        public Carnivore(string name, int size) : base(name, size)
+        public Carnivore(string name, int size, int id) : base(name, size, id)
         {
         }
 

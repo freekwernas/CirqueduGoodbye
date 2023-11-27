@@ -10,3 +10,6 @@ C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\DataAccessLayer\obj\
 C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\DataAccessLayer\obj\Debug\net6.0\refint\DataAccessLayer.dll
 C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.pdb
 C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\DataAccessLayer\obj\Debug\net6.0\ref\DataAccessLayer.dll
+C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\DataAccessLayer\bin\Debug\net6.0\ApplicationCore.dll
+C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\DataAccessLayer\bin\Debug\net6.0\ApplicationCore.pdb
+C:\Users\Freek\Projects\CirqueduGoodbye\CirqueduGoodbye.git\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CopyComplete

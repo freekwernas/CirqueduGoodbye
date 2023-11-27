@@ -8,6 +8,7 @@ namespace ApplicationCore.Interfaces
 {
     public interface IAnimal
     {
+        int Id { get; } 
         int Size { get; }
         string Name { get; }
     }

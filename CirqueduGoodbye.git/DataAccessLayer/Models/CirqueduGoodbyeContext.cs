@@ -19,7 +19,7 @@ namespace DataAccessLayer.Models
         }
 
         public virtual DbSet<Animal> Animals { get; set; }
-        public virtual DbSet<Circus> Circus { get; set; }
+        public virtual DbSet<Circu> Circus { get; set; }
         public virtual DbSet<Train> Trains { get; set; }
         public virtual DbSet<TrainWagon> TrainWagons { get; set; }
 
@@ -28,8 +28,6 @@ namespace DataAccessLayer.Models
             modelBuilder.Entity<Animal>(entity =>
             {
                 entity.ToTable("Animal");
-
-                entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.Name)
                     .IsRequired()
@@ -53,23 +51,14 @@ namespace DataAccessLayer.Models
                     .HasConstraintName("FK_TrainWagon_Animal");
             });
 
-            modelBuilder.Entity<Circus>(entity =>
-            {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-            });
-
             modelBuilder.Entity<Train>(entity =>
             {
                 entity.ToTable("Train");
-
-                entity.Property(e => e.Id).ValueGeneratedNever();
             });
 
             modelBuilder.Entity<TrainWagon>(entity =>
             {
                 entity.ToTable("TrainWagon");
-
-                entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.HasOne(d => d.Train)
                     .WithMany(p => p.TrainWagons)

@@ -9,9 +9,10 @@ namespace ApplicationCore.Interfaces
 {
     public interface ICircus
     {
+        int Id { get; }
         public List<IAnimal> CircusAnimals { get; set; }
 
-        public void AddAnimal(string name, int size, string type);
+        //public void AddAnimal(string name, int size, string type, int id);
 
         public int EquateSize(string size);
 
