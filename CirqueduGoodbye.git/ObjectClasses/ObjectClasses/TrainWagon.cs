@@ -23,12 +23,24 @@ namespace ApplicationCore.ObjectClasses
 
         public bool TryAddAnimal(IAnimal animal)
         {
-            if (!CapcityBreached(animal))
+            if (animal.GetType() == typeof(Carnivore))
             {
-                animals.Add(animal);
-                return true;
+                Carnivore carnivore = (Carnivore)animal;
+                if (!CapcityBreached(animal) && !carnivore.WillEatAnyAnimal(animals))
+                {
+                    animals.Add(animal);
+                    return true;
+                }
             }
-
+            else
+            {
+                Herbivore herbivore = (Herbivore)animal;
+                if (!CapcityBreached(animal) && !herbivore.WillGetEatenAnyAnimal(animals))
+                {
+                    animals.Add(animal);
+                    return true;
+                }
+            }
             return false;
         }
 

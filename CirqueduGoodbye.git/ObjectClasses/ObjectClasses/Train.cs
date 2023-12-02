@@ -41,12 +41,10 @@ namespace ApplicationCore.ObjectClasses
                 bool animalAdded = false;
                 for (int i = 0; i < wagonList; i++)
                 {
-
                     //if capacity is not breached OR if a same size or bigger animal is present of type carnivore
-                    if (!WagonList[i].CapcityBreached(animal) && !animal.WillGetEatenAnyAnimal(WagonList[i].Animals))
+                    animalAdded = WagonList[i].TryAddAnimal(animal);
+                    if(animalAdded)
                     {
-                        animalAdded = true;
-                        WagonList[i].TryAddAnimal(animal);
                         break;
                     }
                 }
