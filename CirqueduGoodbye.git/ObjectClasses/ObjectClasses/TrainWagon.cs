@@ -26,18 +26,18 @@ namespace ApplicationCore.ObjectClasses
             if (animal.GetType() == typeof(Carnivore))
             {
                 Carnivore carnivore = (Carnivore)animal;
-                if (!CapcityBreached(animal) && !carnivore.WillEatAnyAnimal(animals))
+                if (!CapcityBreached(carnivore) && !carnivore.WillEatAnyAnimal(animals))
                 {
-                    animals.Add(animal);
+                    animals.Add(carnivore);
                     return true;
                 }
             }
             else
             {
                 Herbivore herbivore = (Herbivore)animal;
-                if (!CapcityBreached(animal) && !herbivore.WillGetEatenAnyAnimal(animals))
+                if (!CapcityBreached(herbivore) && !herbivore.WillGetEatenAnyAnimal(animals))
                 {
-                    animals.Add(animal);
+                    animals.Add(herbivore);
                     return true;
                 }
             }
